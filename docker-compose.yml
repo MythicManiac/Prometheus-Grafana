@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+
+  prometheus:
+    image: prom/prometheus
+    network_mode: host
+    volumes:
+      - prometheus-data:/prometheus
+
+  grafana:
+    image: grafana/grafana
+    network_mode: host
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+
+volumes:
+  prometheus-data:
+  grafana-data:
